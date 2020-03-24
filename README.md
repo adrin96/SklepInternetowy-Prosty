@@ -1,11 +1,11 @@
 # SklepInternetowy-Prosty
 ---
-System informatyczny dla komputerowego sklepu internetowego. 
+System informatyczny dla komputerowego sklepu internetowego. </br>
 Technologie: Java Spring boot, Bootstrap, baza danych w PostgreSQL </br>
 ==================================== </br>
-Domyślny użytkownik bazy danych: postgres </br>
-domyślne hasło: admin </br> 
-Nazwa bazy danych: SKLEP  </br>
+Domyślny użytkownik bazy danych: <i> postgres </i> </br>
+domyślne hasło:<i>  admin </i> </br> 
+nazwa bazy danych: <i> SKLEP </i>  </br>
 
 ==================================== </br>
 spring.datasource.url=jdbc:postgresql://localhost:5432/SKLEP <br>
