@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Wyniki</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="body.css">
+
+                <style>
+                    .toplane{
+                        background-color: #555;
+                        width:100%;
+                        height:50%;
+                        padding: 20px;
+                        color: white;
+                    }
+
+                    .message{
+                        width:25%;
+                        height:50%;
+                        padding: 20px;
+                        margin-top: 10px;
+                    }
+                </style>
+
+                </head>
+                <body>
+
+                    <center> 
+
+                        <div class="toplane">
+                            <h2>Pomyślnie zaktualizowano bazę danych</h2>
+                        </div>
+
+                        </br>
+                        <img align="center" src="https://cdn3.iconfinder.com/data/icons/de-moji-1/128/Happy-512.png" 
+                             width="100" height="100" margin-top="20px"> 
+
+                            </br>   
+                            </br>
+                            <div class="message">
+                                <div class="alert alert-success" role="alert" width="20">
+                                    <h5 th:text="${header}" />
+                                    <font color="green">
+                                        <p th:text="${message}" />
+                                    </font>
+                                </div>
+
+                                <a class="btn btn-secondary" href="/" role="button"> Strona Główna </a> 
+
+                            </div> 
+
+                            </body>
+                            </html>
+

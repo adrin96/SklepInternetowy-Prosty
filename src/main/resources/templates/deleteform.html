@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Usuwanie osoby z bazy</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>       
+    </head>
+    <body>
+
+        <h2> Usuwanie osoby z bazy:</h2>
+
+        <form method="POST" th:object="${transData}">
+
+            <div class="form-group">    
+                <label> Imię: </label>:
+                <input type="text" th:field="${transData.firstName}" value=""/><br/>            
+            </div>       
+
+            <br/>
+
+            <div class="form-group">    
+                <label> Nazwisko: </label>:
+                <input type="text" th:field="${transData.lastName}" value=""/><br/>            
+            </div>       
+
+            <br/>
+
+            <input type="submit" value="Usuń" />
+
+
+        </form>
+
+
+
+    </body>
+</html>
+
+

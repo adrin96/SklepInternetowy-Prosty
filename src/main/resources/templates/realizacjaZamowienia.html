@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <head>
+            <title> </title>  
+
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+            <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+                  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                    <script>
+                        function windowPrint() {
+                            window.print()
+                        }
+                    </script>
+
+
+
+                    <link rel="stylesheet" href="index.css">
+
+
+                        </head>
+
+                        <body>
+                            <center>
+
+
+                                <div class="toplane" align="center" style="text-align:center">       
+
+                                    <h2>         
+                                        Finalizacja zamówienia   <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/send-o-512.png"
+                                                                      alt="Snow" width=50 height=50>
+                                    </h2> 
+                                </div>
+
+
+
+                                <br>
+
+
+
+                                    <div class="container">
+                                        <b> Data sprzedaży: </b>
+                                        <b  th:utext="${data}">  </b> 
+                                        <br>
+
+                                            <br>
+                                                <div align="center" class="table-responsive">
+                                                    <table class="table table-borderless">          
+                                                        <thead class="thead-dark"  align="center">
+                                                            <tr  class="active">
+                                                                <th > Imię </th>
+                                                                <th> Nazwisko </th>
+                                                                <th> Adres </th>
+                                                                <th> Telefon </th>
+                                                            </tr>
+
+                                                        </thead>
+                                                        <tbody>      
+
+                                                            <tr th:each ="klient : ${klientList}" align="center">     
+                                                                <td> <b  th:utext="${klient.imie}"> Imię </b> </td>
+                                                                <td> <b  th:utext="${klient.nazwisko}"> Nazwisko </b> </td>
+                                                                <td> <b  th:utext="${klient.adres}"> Adres</b> </td>
+                                                                <td> <b  th:utext="${klient.telefon}"> Telefon</b> </td>
+                                                            </tr>
+                                                        </tbody>          
+                                                    </table>    
+                                                </div>
+
+                                                <br>
+                                                    <br>
+
+
+
+                                                        <table class="table table-borderless" align="center">
+                                                            <thead align="center">
+                                                                <tr>                        
+                                                                    <th scope="col">Nazwa produktu</th>
+                                                                    <th scope="col">Ilość</th>
+                                                                    <th scope="col">Cena</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>                       
+                                                                <tr th:each ="produkty : ${produktyList}" align="center">     
+                                                                    <td> <b  th:utext="${produkty.przedmiot}">  </b> </td>
+                                                                    <td> <b  th:utext="${produkty.ilosc}"></b> </td>                          
+                                                                    <td> <b  th:utext="${produkty.cena}"></b> </td>                                   
+                                                                </tr>
+
+
+                                                                <div class="col">
+
+                                                                    <td colspan=4 align="right"> 
+                                                                        <br>
+                                                                            <br>
+                                                                                <b> Suma: </b>
+                                                                                <normal th:text="${suma}"/>  zł
+                                                                                <br>
+                                                                                    <b>Koszty dostawy: </b>
+                                                                                    15.0 zł 
+                                                                                    <br>
+                                                                                        <br>
+                                                                                            <b> Razem: </b>
+                                                                                            <br>
+                                                                                                <normal th:text="${sumaDostawa}"/>
+                                                                                                zł
+                                                                                                <br>
+                                                                                                    </td>
+                                                                                                    </div>
+
+                                                                                                    </tbody> 
+                                                                                                    </table>
+
+
+
+
+                                                                                                    <br>
+                                                                                                        <a href="/koniec_zamowienia">  
+                                                                                                            <button onclick="windowPrint()" class="btn btn-success" id="nonPrint" > Zakup </button>
+                                                                                                        </a>
+
+                                                                                                        <br>
+                                                                                                            <br>
+
+                                                                                                                <a href="/index.html">
+                                                                                                                    <a class="btn btn-secondary" href="/wyswietl_produkty" role="button" id="nonPrint" > Powrót  </a> 
+                                                                                                                </a>
+
+
+
+
+                                                                                                                </body>
+                                                                                                                </html>

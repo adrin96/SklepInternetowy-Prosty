@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >    
+    <head>
+        <title>Lista Produktow:  </title>     
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <link rel="stylesheet" href="body.css">
+
+
+                    </head>
+
+                    <body>
+
+                        <div class="navbar">  <img align="center" src="main_logo.png" 
+                                                   width="90" height="90">    
+
+                                <font style="font-size: 36px" color="red"> 	  <p class="text-success"> beHappy  </p>  </font>
+
+                                <h2>
+                                    <font color="white">  
+
+                                        Witaj Drogi Kliencie 
+                                        <img src="https://cdn4.iconfinder.com/data/icons/essential-app-2/16/user-avatar-human-admin-login-512.png" width=50 height=50>
+                                            </h2>
+                                    </font>
+
+                                    <i></i>
+                                    <i></i>
+                                    </div>
+
+                                    <center>
+                                        </br>
+
+                                        </br>
+                                        </div>
+
+                                        <div th:if="${wyswietlanie_komunikatu} == false "> 
+                                            <div class="container">
+                                                <div align="center" class="table-responsive">
+                                                    <table class="table table-bordered">          
+                                                        <thead class="thead-dark">
+                                                            <tr  class="active">
+                                                                <th>Nazwa</th>
+                                                                <th>Ilość</th>
+                                                                <th>Cena</th>
+                                                                <th> </th>
+                                                            </tr>
+
+                                                        </thead>
+                                                        <tbody>                       
+                                                            <tr th:each ="produkty : ${produktyList}">     
+                                                                <td> <b  th:utext="${produkty.nazwa}">...</b> </td>
+                                                                <td> <b  th:utext="${produkty.ilosc}">...</b> </td>
+                                                                <td> <b  th:utext="${produkty.cena}">...</b> </td>
+                                                                <td align="center"> <a class="btn btn-primary" th:href="@{'/wyswietl_produkty/' + ${produkty.id}}">Dodaj do koszyka</a></td>
+
+                                                            </tr>
+                                                        </tbody>          
+                                                    </table>    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col">
+                                            <td colspan=4 align="right"> 
+                                                <div th:if="${wyswietlanie_komunikatu} == true "> 
+                                                    <div class="brak_towarow">												
+                                                        <p th:text="${komunikat}" class="alert alert-info"/>                                        
+                                                    </div>
+                                                </div>
+                                                <br>
+
+                                                    <a href="/wyswietl_koszyk_klienta" class="ile_produktow">
+                                                        <img src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/shopping-cart-512.png" alt="Snow" width=70 height=70> 
+
+                                                            <p th:text="${liczba_produktow}" align="center"/>  
+                                                        </img>   	
+                                                    </a>
+                                            </td>
+
+
+
+                                        </div>
+
+
+                                        <br>       
+                                            <br>   
+
+                                                <form method="POST" th:action="@{/logout}">         
+                                                    <input class="btn btn-info" type="submit" value="Wyloguj" />
+                                                </form>
+
+
+
+                                                </center>
+                                                </body>
+                                                </html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >    
+    <head>
+        <title> Lista zamówień </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+                <link rel="stylesheet" href="body.css">     
+
+                    <script>
+                        function windowPrint() {
+                        window.print()
+                        }
+                    </script>
+
+                    </head>
+
+                    <body>
+                        <center>
+
+                            <div  align="center" style="text-align:center">       
+
+                                <div class="toplane">
+                                    <h2>         
+                                        Lista wszystkich zamówień     
+                                    </h2> 
+                                </div>
+                                <br>
+                                    <br>
+                                        <div class="container">
+                                            <div align="center" class="table-responsive">
+
+                                                <table class="table table-bordered">          
+                                                    <thead class="thead-dark">
+                                                        <tr  class="active">
+                                                            <th>ID</th>
+                                                               <th>Imię Pracownika</th>
+<!--                                                            <th>ID_Pracownika</th>-->
+<!--                                                            <th>ID_Klienta</th>-->
+                                                            <th>Data sprzedaży</th>                                                         
+                                                            <th>Imię Klienta</th>
+                                                            <th>Nazwisko Klienta</th>
+                                                            <th>Adres </th>
+                                                            <!--<th>Kwota </th>-->
+                                                            <th id="nonPrint" > </th>													
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>                       
+                                                        <tr th:each ="zamowienia : ${zamowieniaList}">     
+                                                            <td> <b  th:utext="${zamowienia.id}">...</b></td>
+                                                                  <td> <b  th:utext="${pracownik.imie}">...</b> </td>
+<!--                                                            <td> <b  th:utext="${zamowienia.id_pracownika}">...</b> </td>-->
+<!--                                                            <td> <b  th:utext="${zamowienia.id_koszyka}">...</b> </td>-->
+                                                            <td> <b  th:utext="${zamowienia.data}">...</b> </td>                                                   
+                                                            <td> <b  th:utext="${klient.imie}">...</b> </td>
+                                                            <td> <b  th:utext="${klient.nazwisko}">...</b> </td>
+                                                            <td> <b  th:utext="${klient.adres}">...</b> </td>
+                                                            <!--<td> <b  th:utext="${suma}">...</b> </td>-->                                                           
+                                                            <td align="center" id="nonPrint" > <a class="btn btn-danger" th:href="@{'/wyswietl_zamowienia/' + ${zamowienia.id}}" id="nonPrint" >Usuń</a></td>
+                                                        </tr>
+
+
+                                                        <div class="col">
+                                                            <td colspan=8 align="center" id="nonPrint" > 
+                                                                <a class="btn btn-success btn-lg btn-block" href="/dodaj_zamowienie" role="button" width="100"> Dodaj  </a>
+                                                            </td>
+                                                        </div>
+
+
+                                                        </tr>
+                                                    </tbody> 
+
+
+                                                </table>    
+                                            </div>
+
+                                            <button onclick="windowPrint()" class="btn btn-warning" id="nonPrint" > Generuj PDF </button>
+                                            <br>
+                                                <br>   
+                                                    <a class="btn btn-secondary" href="/staff" role="button" id="nonPrint" > Powrót  </a>            
+                                                    </div>
+
+
+                                                    </body>
+                                                    </html>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <head>
+            <title> </title>  
+
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+            <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+                  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <link rel="stylesheet" href="index.css">
+                        </head>
+                        <body>
+                            <center>
+                                <div class="toplane" align="center" style="text-align:center">       
+
+                                    <h2>         
+                                        Koniec transakcji  <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/send-o-512.png"
+                                                                alt="Snow" width=50 height=50>
+                                    </h2> 
+                                </div>
+
+                                <br>
+                                    <h2>
+                                        <div class="col">
+                                            <div class="message">                                   
+                                                <div class="brak_towarow">												
+                                                    <p th:text="${komunikat}" class="alert alert-info"/>                                              
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </h2>
+
+                                    <br>
+                                        <a class="btn btn-secondary" href="/wyswietl_produkty" role="button" id="nonPrint" > Strona Główna  </a> 
+
+
+
+
+                                        </body>
+                                        </html>

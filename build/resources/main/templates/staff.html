@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+
+            <link rel="stylesheet" href="index.css">
+                </head>
+
+                <body>
+                    <center>
+
+                        <div class="toplane">
+
+                            <h2> Panel Pracownika sklepu 
+                                <img src="https://cdn0.iconfinder.com/data/icons/security-double-colour-blue-black-vol-3/52/protection__setting__gear__security-512.png" width=50 height=50>
+                            </h2> 
+
+                        </div>
+                        <br>
+                            <div class="menu"  style="width:80%;margin-left:20%;">	
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Klienci</h5>
+                                                <p class="card-text"> Panel zarządzania Klientami </p>
+
+                                                <a href="/wyswietl_klientow" class="btn btn-primary">Przejdź</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Produkty</h5>
+                                                <p class="card-text">Panel zarządzanie produktami </p>
+
+                                                <a href="/wyswietl_produkty_pracownik" class="btn btn-primary">Przejdź</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Zamówienia</h5>
+
+                                                <p class="card-text">Panel zarządzania Zamówieniami</p>
+
+                                                <a href="/wyswietl_zamowienia" class="btn btn-primary">Przejdź</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                        </br>
+
+                        </br> 
+
+                        <form method="POST" th:action="@{/logout}"> 
+
+                            <input class="btn btn-info" type="submit" value="Wyloguj" />
+
+                        </form>
+
+                </body>
+                </html>

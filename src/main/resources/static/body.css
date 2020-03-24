@@ -1,0 +1,91 @@
+body {  
+    background-color: #EEE;
+}
+
+.toplane{
+    background-color: #555;
+    width:100%;
+    height:50%;
+    padding: 20px;
+    color: white;
+}
+
+
+.login{
+
+    background-color: #FFFFFF;
+    width: 20vw;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 5px 2px 2px #888888;
+    -webkit-border-radius: 29px 29px 29px 29px;;  
+    -webkit-box-shadow: 0px 0px 25px -3px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 0px 25px -3px rgba(0,0,0,0.55);
+    box-shadow: 0px 0px 25px -3px rgba(0,0,0,0.55);
+}
+
+.message{
+    width:25%;
+    height:50%;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+
+.container{
+
+    background-color: #ffffff;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px -0px rgba(0,0,0,0.55);
+}
+
+
+
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    padding: 10px;
+}
+
+.navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.navbar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+.brak_towarow{
+    font-size: 26px;
+    width: 25vw;
+}
+
+.ile_produktow {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+
+@media print {
+  #nonPrint {
+    display: none;
+  }
+}

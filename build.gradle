@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
+        classpath("io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE")
+
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+//Ustalenie nazwy i wersji wygenerowanego jara (nazwa wersji bedzie dolaczona do nazwy)
+bootJar {
+    baseName = 'witaj_jpa'
+    version =  '1.0'
+}
+
+//Ustawienie wersji SDK jezyka Java (1.9)
+sourceCompatibility = '12'
+
+//Ustawienie zrodla z którego maj1 bya importowane biblioteki 
+repositories {
+    mavenCentral()
+}
+         
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-devtools")    
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.h2database:h2")
+    compile("org.postgresql:postgresql:42.2.6")    
+    compile("org.springframework.boot:spring-boot-starter-security")
+}
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >    
+    <head>
+        <title>Lista klientow: </title>  
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <link rel="stylesheet" href="body.css">
+
+                    <script>
+                        function windowPrint() {
+                            window.print()
+                        }
+                    </script>
+
+                    </head>
+
+                    <body>
+                        <center>
+                            <div align="center" style="text-align:center">       
+
+                                <div class="toplane">
+                                    <h2>         
+                                        Lista wszystkich klientów   
+                                    </h2> 
+                                </div>
+
+                                <br>
+                                    <br>
+
+
+                                        <div class="container">
+                                            <div align="center" class="table-responsive">
+                                                <table class="table table-bordered">          
+                                                    <thead class="thead-dark">
+                                                        <tr  class="active">
+                                                            <th>ID</th>
+                                                            <th>Imie</th>  
+                                                            <th>Nazwisko</th>  
+                                                            <th>Telefon</th>
+                                                            <th>Adres</th>  
+                                                            <th id="nonPrint" > </th>							
+                                                        </tr>
+
+                                                    </thead>
+                                                    <tbody>                       
+                                                        <tr th:each ="klient : ${klientList}">    
+                                                            <td> <b  th:utext="${klient.id}">...</b> </td>
+                                                            <td> <b  th:utext="${klient.imie}">...</b> </td>
+                                                            <td> <b  th:utext="${klient.nazwisko}">...</b> </td>
+                                                            <td> <b  th:utext="${klient.telefon}">...</b> </td>
+                                                            <td> <b  th:utext="${klient.adres}">...</b> </td>   
+                                                            <td align="center" id="nonPrint" > <a class="btn btn-danger" th:href="@{'/wyswietl_klientow/' + ${klient.id}}" id="nonPrint" >Usuń</a>
+                                                                <a class="btn btn-primary" th:href="@{'/edytuj_klienta/' + ${klient.id}}" id="nonPrint" > Edytuj </a></td>
+
+                                                        </tr>
+
+                                                        </tr><div class="col">
+
+                                                            <td colspan=6 align="center" id="nonPrint" > 
+                                                                <a class="btn btn-success btn-lg btn-block" href="/dodaj_klienta" role="button" width="100" id="nonPrint" > Dodaj  </a>
+
+
+                                                            </td>
+                                                        </div>
+                                                    </tbody>          
+                                                </table>    
+                                            </div>
+                                            <button onclick="windowPrint()" class="btn btn-warning" id="nonPrint" > Generuj PDF </button>
+                                            <br>
+                                                <br>       
+                                                    <a class="btn btn-secondary" href="/staff" role="button" id="nonPrint" > Powrót  </a> 
+
+
+
+                                                    </div>
+
+
+                                                    </body>
+                                                    </html>
+

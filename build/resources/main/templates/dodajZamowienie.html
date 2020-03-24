@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Dodawanie osoby do bazy</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="body.css">
+
+                </head>
+                <body>
+                    <div class="toplane">
+                        <h2><center> Dodawanie Produktu do bazy </h2> </center>
+                    </div>
+
+                    <br>
+                        <br>
+
+                            <div th:if="${param.error}" align="center">
+
+                            </div>
+
+                            <div class="login" align="center">
+                                <form  th:action="@{/dodaj_zamowienie}"  method="POST" th:object="${transData}">
+
+
+                                    <div>    
+                                        <label> ID Pracownika 
+                                            <input class="form-control" type="text" th:field="${transData.id_pracownika}" value=""/><br/>    
+                                        </label>			
+                                    </div>       
+
+                                    <div>    
+                                        <label> ID Koszyka
+                                            <input class="form-control" type="text" th:field="${transData.id_koszyka}" value=""/><br/>    
+                                        </label>			
+                                    </div>  
+
+                                    <br>
+
+
+
+
+                                        <input class="btn btn-success" type="submit" value="Dodaj">
+                                            <a class="btn btn-secondary" href='/wyswietl_zamowienia' role="button"> Powrót  </a>
+
+
+                                            </form>
+
+
+
+                                            </body>
+                                            </html>
+

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Edycja danych klienta</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+            <link rel="stylesheet" href="body.css">
+                <style>
+                    .toplane{
+                        background-color: #555;
+                        width:100%;
+                        height:50%;
+                        padding: 10px;
+                        color: white;
+                    }
+
+
+                    .login{
+
+                        background-color: #FFFFFF;
+                        width: 20vw;
+                        margin: 0 auto;
+                        padding: 1rem;
+                        box-shadow: 5px 2px 2px #888888;
+                        -webkit-border-radius: 29px 29px 29px 29px;;  
+                        -webkit-box-shadow: 0px 0px 25px -3px rgba(0,0,0,0.55);
+                        -moz-box-shadow: 0px 0px 25px -3px rgba(0,0,0,0.55);
+                        box-shadow: 0px 0px 25px -3px rgba(0,0,0,0.55);
+                    }
+                </style>
+
+                </head>
+                <body>
+
+
+                    <div class="toplane">
+                        <h2><center> Edytowanie Klienta  </h2> 
+                        </br>
+                        <div align="center">
+                            <form  th:action="@{/edytuj_klienta}"  method="POST" th:object="${transData}">
+                        </div>
+                    </div>
+
+                    <br>
+                        <br>
+
+
+                            <div align="center" class ="login">
+                                <div>    
+                                    <label> ID 
+                                        <input class="form-control" type="text" th:field="${transData.id}" value="${id}"/><br/>    
+                                    </label>			
+                                </div>  
+
+
+                                <div>    
+                                    <label> Imię 
+                                        <input class="form-control" type="text" th:field="${transData.imie}" th:attr="value = ${imie}"/><br/>    
+                                    </label>			
+                                </div>   
+
+
+
+                                <div >    
+                                    <label> Nazwisko 
+                                        <input class="form-control"  type="text" th:field="${transData.nazwisko}" th:attr="value = ${nazwisko}" /><br/>   
+                                    </label>				
+                                </div>       
+
+
+
+                                <div >    
+                                    <label> Telefon 
+                                        <input class="form-control"  type="text" th:field="${transData.telefon}" th:attr="value = ${id}"/><br/>   
+                                    </label>			
+                                </div>       
+
+
+
+                                <div >    
+                                    <label> Adres 
+                                        <input  class="form-control" type="text" th:field="${transData.adres}" th:value="${adres}"/><br/>      
+                                    </label>		
+                                </div>  
+
+
+                                <input class="btn btn-success" type="submit" value="Zatwierdź">
+                                    <a class="btn btn-secondary" href='/wyswietl_klientow' role="button"> Powrót  </a>
+                                    <br>
+
+
+                      
+                            </form>
+
+
+
+
+                            </center>
+                            </body>
+                            </html>
+

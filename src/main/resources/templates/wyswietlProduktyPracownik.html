@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >    
+    <head>
+        <title>Lista Produktow:  </title>     
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <link rel="stylesheet" href="body.css">
+                    <script>
+                        function windowPrint() {
+                            window.print()
+                        }
+                    </script>
+                    </head>
+
+                    <body>
+                        <center>
+
+                            <div class="toplane" align="center" style="text-align:center">      
+
+                                <h2>         
+                                    Lista wszystkich produktów   
+                                </h2>
+                            </div>
+                            </br>
+
+                            </br>
+
+
+
+                            <div class="container">
+                                <div align="center" class="table-responsive">
+                                    <table class="table table-bordered">          
+                                        <thead class="thead-dark">
+                                            <tr  class="active">
+                                                <th>ID</th>
+                                                <th>Nazwa</th>
+                                                <th>Ilość</th>
+                                                <th>Cena</th>
+                                                <th id="nonPrint"> </th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>                       
+                                            <tr th:each ="produkty : ${produktyList}">     
+                                                <td> <b  th:utext="${produkty.id}">...</b></td>
+                                                <td> <b  th:utext="${produkty.nazwa}">...</b> </td>
+                                                <td> <b  th:utext="${produkty.ilosc}">...</b></td>
+                                                <td> <b  th:utext="${produkty.cena}">...</b> </td>
+                                                <td align="center" id="nonPrint">  <a class="btn btn-danger" th:href="@{'/wyswietl_produkty_pracownik/' + ${produkty.id}}" id="nonPrint"> Usuń</a>
+                                                    <a class="btn btn-primary" th:href="@{'/edytuj_produkty/' + ${produkty.id}}" id="nonPrint"> Edytuj </a></td>
+
+
+                                            </tr><div class="col">
+
+                                                <td colspan=6 align="center" id="nonPrint"> 
+                                                    <a class="btn btn-success btn-lg btn-block" href="/dodaj_produkt" role="button" width="100" id="nonPrint"> Dodaj  </a>
+
+
+                                                </td>
+                                            </div>
+
+
+                                            </tr>
+                                        </tbody>          
+                                    </table>    
+                                </div>
+
+
+                                <button onclick="windowPrint()" class="btn btn-warning" id="nonPrint"> Generuj PDF </button>
+                                <br>
+
+                                    <br>   
+                                        <a class="btn btn-secondary" href="/staff" role="button" id="nonPrint"> Powrót  </a> 
+
+                                        </div>
+
+
+                                        </body>
+                                        </html>
+

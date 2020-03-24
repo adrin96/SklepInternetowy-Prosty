@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> Usuwanie Pracownika z bazy danych </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>       
+
+        <link rel="stylesheet" href="body.css">
+    </head>
+    <body>
+
+        <h2> Usuwanie Pracownika z bazy danych </h2>
+
+        <form  th:action="@{/usun_pracownika}"  method="POST" th:object="${transData}">
+
+            <div class="form-group">    
+                <label> ID_Pracownika </label>:
+                <input type="text" th:field="${transData.id}" value=""/><br/>            
+            </div>       
+
+            <br/>
+
+            <input type="submit" value="Usun" /> <br/>
+
+
+        </form>
+        </br>
+        <button onclick="window.location.href = '/admin'"> Powrot </button> 
+
+
+
+
+    </body>
+</html>
+
+

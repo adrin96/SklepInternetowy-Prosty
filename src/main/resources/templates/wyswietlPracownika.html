@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" type="text/css" href="H:\MEGA chmura\Studia III rok\Aplikacje JAVA\Lab4\SpringMVC_JPA_H2_Zadanie\Dodatki\CSS\main.css">
+
+                <link rel="stylesheet" href="index.css">
+
+                    <script>
+                        function windowPrint() {
+                            window.print()
+                        }
+                    </script>
+
+                    <title>Lista pracowników </title>               
+                    </head>
+
+                    <body>
+
+
+
+                        <div class="toplane" style="text-align:center">               
+                            <h2>   Lista wszystkich pracowników </h2>      
+                            </br>
+                        </div>
+
+                        </br>
+
+
+                        <div class="container">
+                            <div align="center" class="table-responsive">
+
+                                <table class="table table-bordered">          
+                                    <thead class="thead-dark">
+                                        <tr  class="active">
+                                            <th>ID</th>
+                                            <th>Imię</th>  
+                                            <th>Nazwisko</th>  
+                                            <th>Stanowisko</th>
+                                            <th>Płaca</th>   
+                                            <th id="nonPrint" >  </th >
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>                       
+                                        <tr th:each ="pracownik : ${pracownikList}">     
+                                            <td> <b  th:utext="${pracownik.id}">...</b> </td>
+                                            <td> <b  th:utext="${pracownik.imie}">...</b> </td>
+                                            <td> <b  th:utext="${pracownik.nazwisko}">...</b> </td>
+                                            <td> <b  th:utext="${pracownik.stanowisko}">...</b> </td>
+                                            <td> <b  th:utext="${pracownik.placa}">...</b> </td>   
+                                            <td align="center" id="nonPrint" > <a class="btn btn-danger" th:href="@{'/wyswietl_pracownikow/' + ${pracownik.id}}" id="nonPrint" >Usuń</a>
+                                                <a class="btn btn-primary" th:href="@{'/edytuj_pracownikow/' + ${pracownik.id}}" id="nonPrint" > Edytuj </a></td>
+
+                                        </tr>
+                                        <div class="col">
+                                            <td colspan=6 align="center" id="nonPrint" > 
+                                                <a class="btn btn-success btn-lg btn-block" href="/dodaj_pracownika" role="button" width="100" id="nonPrint" > Dodaj  </a>
+                                            </td>
+                                        </div>
+
+
+                                        </tr>
+                                    </tbody>          
+                                </table>    
+                                
+                                <button onclick="windowPrint()" class="btn btn-warning" id="nonPrint" > Generuj PDF </button>
+                                <br>
+                                <br>
+                                    
+                                <form method="POST" th:action="@{/logout}">         
+                                    <input class="btn btn-info" type="submit" value="Wyloguj"  id="nonPrint" />
+                                </form>
+                            </div>
+                        </div>
+
+                        </p>
+                    </body>
+                    </html>
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <link rel="stylesheet" href="body.css">
+
+
+                    </head>
+
+                    <body>
+
+
+                        <div class="top">                
+                            <h4>   <normal th:text="${header}"/>  </h4>      
+
+                        </div>
+
+
+                        <div class="container">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">          
+                                    <thead>
+                                        <tr  class="active">
+                                            <th>ID</th>
+                                            <th>ID_Produktu</th>
+                                            <th>ID_Klienta</th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>                       
+                                        <tr th:each ="koszyk : ${koszykList}">     
+                                            <td> <b  th:utext="${koszyk.id}">...</b></td>
+                                            <td> <b  th:utext="${koszyk.id_produktu}">...</b> </td>
+                                            <td> <b  th:utext="${koszyk.id_klienta}">...</b> </td>
+                                        </tr>
+                                    </tbody>          
+                                </table>    
+                            </div>
+
+                            <a href="/client"> Powrot </a> 
+
+                        </div>
+
+
+                    </body>
+                    </html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Dodawanie osoby do bazy</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>       
+    </head>
+    <body>
+
+        <h2> Dodawanie osoby do bazy:</h2>
+
+        <form method="POST" th:object="${transData}">
+
+            <div class="form-group">    
+                <label> Imię: </label>:
+                <input type="text" th:field="${transData.firstName}" value=""/><br/>            
+            </div>       
+
+            <br/>
+
+            <div class="form-group">    
+                <label> Nazwisko: </label>:
+                <input type="text" th:field="${transData.lastName}" value=""/><br/>            
+            </div>       
+
+            <br/>
+
+            <div class="form-group">    
+                <label> Wiek: </label>:
+                <input type="text" th:field="${transData.age}" value=""/><br/>            
+            </div>       
+
+            <br/>
+
+            <div class="form-group">    
+                <label> Waga: </label>:
+                <input type="text" th:field="${transData.weight}" value=""/><br/>            
+            </div>       
+
+            <br/>
+
+            <div class="form-group">    
+                <label> Plec: </label>:
+                <input type="text" th:field="${transData.sex}" value=""/><br/>            
+            </div>
+
+            <br/>
+
+
+
+            <input type="submit" value="Dodaj" />
+            <br> 
+                <a href="/index.html"> Strona główna </a> 
+
+        </form>
+
+
+
+    </body>
+</html>
+

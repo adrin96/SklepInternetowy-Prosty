@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Strona błedów</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="stylesheet" href="body.css">
+
+                </head>
+                <p style="margin-top: 20px"> 
+                    <body>
+                        <center> 
+
+                            <h2>Wystąpił nieoczekiwany błąd aplikacji</h2>
+
+                            </br>
+                            <img align="center" src="https://cdn3.iconfinder.com/data/icons/de-moji-1/128/Sad-512.png" 
+                                 width="100" height="100" margin-top="20px"> 
+
+                                </br>
+                                </br>
+                                <font color="red">
+                                    <p th:text="'Opis błędu: ' + ${errormessage}" /> <br/>
+                                </font>
+                                <a class="btn btn-secondary" href="/wyswietl_pracownikow" role="button"> Powrót </a> 
+
+                        </center>
+                    </body>
+                    </html>
