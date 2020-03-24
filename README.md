@@ -7,5 +7,7 @@ domyślne hasło: admin
 Nazwa bazy danych: SKLEP
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/SKLEP
+
 spring.datasource.username=postgres
+
 spring.datasource.password=admin
